@@ -1,27 +1,22 @@
-# Laravel PHP Framework
+Laravel-shopping是一个以laravel框架搭建的商城管理后台。
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+最初，做这一个后台只是找工作，碰到最多的就是一些做商城项目的，又没有这方面的一些经验，所以，花了一个星期做了这一个商城管理的后台系统。虽然做的很粗糙，但是对一些初学laravel框架，或是做商城的同学，应该还是有点帮助的。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+这个后台所用到的模版是: AdminLTE（十分不错的一个后台模版，可以搜索下https://www.almsaeedstudio.com/）
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+感兴趣的朋友，可以联系我。 邮箱：kelvin_512@sina.com
 
-## Official Documentation
+下载完代码后，运行
+composer install        //  这个是安装些商城后台系统的一些依赖
+php artisan db:seed     //  商城后台系统的一些基本数据
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+初始账号： 断水流
+密码    :  123asd
 
-## Contributing
+简单说下这个系统：
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+app/Http/Controllers/Admin       // 后台管理的Controller层目录
+app/Models                       // Model层目录(当然前台也可以用，只是一些数据的操作)
+app/Services                     // Services层目录(对数据操作方法的封装，便于控制器层的调用)
+resource/views/admin             // 后台管理的View层目录
+public/backstage                 // 后台用到的一些插件，样式目录
