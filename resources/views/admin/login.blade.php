@@ -55,9 +55,14 @@
             <div class="form-box">
                 <!-- <p class="login-box-msg">登录</p> -->
                 <div class="kelvin-header">后台管理</div>
-                <!-- <form action="{{ route('admin.login.store') }}" method="post"> -->
                 {{ Form::open(['route' => 'admin.login.store']) }}
                     <div class="kelvin-body bg-gray">
+                        @if(Session::has('flash_message'))
+                            <div class="alert alert-danger alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                {{ Session::get('flash_message') }}
+                            </div>
+                        @endif
                         <!-- <div class="form-group has-feedback">
                             <input type="text" name="username" class="form-control" placeholder="用户名">
                             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

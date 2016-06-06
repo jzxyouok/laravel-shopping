@@ -61,7 +61,7 @@ class UserController extends BaseController
 
     		return redirect()->route('admin.user.index');
     	} catch(\Exception $e) {
-    		return redirect()->route('admin.user.index');
+    		return redirect()->route('admin.user.index')->with('flash_message', '写入失败，请重新操作')->with('flash_type', 'danger');
     	}
     }
 
@@ -87,7 +87,7 @@ class UserController extends BaseController
 
     		return redirect()->route('admin.user.index');
     	} catch(\Exception $e) {
-    		return redirect()->route('admin.user.index');
+    		return redirect()->route('admin.user.index')->with('flash_message', '编辑失败，请重新操作')->with('flash_type', 'danger');
     	}
     }
 
@@ -101,7 +101,7 @@ class UserController extends BaseController
 
 	    	return redirect()->route('admin.user.index');
     	} catch(\Exception $e) {
-    		return redirect()->route('amdin.user.index');
+    		return redirect()->route('amdin.user.index')->with('flash_message', '删除失败，请重新操作')->with('flash_type', 'danger');
     	}
     }
 }

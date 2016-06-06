@@ -30,16 +30,16 @@ class LoginController extends BaseController
 	    $credentials['type'] = BaseModel::TYPE_USER_SUPER_ADMIN;
 
 	    if (Auth::attempt($credentials, $remember)) {
-	    	return redirect()->route('admin.home');
+	    	return redirect()->route('admin.home')->with('flash_message', '欢迎来到后台管理中心')->with('flash_type', 'success');
 	    }
         
         // 2. 管理员
 	    $credentials['type'] = BaseModel::TYPE_USER_ADMIN;
 
         if (Auth::attempt($credentials, $remember)) {
-	    	return redirect()->route('admin.home');
+	    	return redirect()->route('admin.home')->with('flash_message', '欢迎来到后台管理中心')->with('flash_type', 'success');
 	    }
 
-	    return redirect()->back();
+	    return redirect()->back()->with('flash_message', '登录失败');
     }
 }

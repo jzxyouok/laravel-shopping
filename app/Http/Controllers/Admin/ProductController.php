@@ -43,7 +43,7 @@ class ProductController extends BaseController
 
             return redirect()->route('product.index');
     	} catch(\Exception $e) {
-    		return redirect()->route('product.index');
+    		return redirect()->route('product.index')->with('flash_message', '写入失败，请重新操作')->with('flash_type', 'danger');
     	}
     }
 
@@ -69,7 +69,7 @@ class ProductController extends BaseController
 
             return redirect()->route('product.index');
     	} catch(\Exception $e) {
-    		return redirect()->route('product.index');
+    		return redirect()->route('product.index')->with('flash_message', '编辑失败，请重新操作')->with('flash_type', 'danger');
     	}
     }
 
@@ -83,7 +83,7 @@ class ProductController extends BaseController
 
             return redirect()->route('product.index');
     	} catch(\Exception $e) {
-    		return redirect()->route('product.index');
+    		return redirect()->route('product.index')->with('flash_message', '删除失败，请重新操作')->with('flash_type', 'danger');
     	}
     }
 }
